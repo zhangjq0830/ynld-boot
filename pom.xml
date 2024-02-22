@@ -2,72 +2,103 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ynld</groupId>
+  <artifactId>ynld-boot</artifactId>
+  <version>${revision}</version>
+  <packaging>pom</packaging>
 
-    <groupId>com.ynld</groupId>
-    <artifactId>ynld-boot</artifactId>
-    <version>1.0.0</version>
-    <packaging>pom</packaging>
+  <modules>
+    <module>ynld-server</module>
+    <module>ynld-framework</module>
+  </modules>
 
-    <properties>
-        <spring-boot.version>3.2.2</spring-boot.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-    </properties>
+  <properties>
+    <revision>1.0.0</revision>
+    <spring-boot.version>3.2.2</spring-boot.version>
+    <druid.version>1.2.21</druid.version>
+    <mybatis-plus.version>3.5.5</mybatis-plus.version>
+    <hutool.version>5.8.26</hutool.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+  </properties>
 
-    <!-- 依赖声明 -->
-    <dependencyManagement>
-        <dependencies>
-            <!-- SpringBoot的依赖配置-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+  <!-- 依赖声明 -->
+  <dependencyManagement>
+    <dependencies>
+      <!-- SpringBoot的依赖配置-->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <target>${maven.compiler.target}</target>
-                    <source>${maven.compiler.source}</source>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+      <!-- 阿里数据库连接池 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-3-starter</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
 
-    <repositories>
-        <repository>
-            <id>public</id>
-            <name>aliyun nexus</name>
-            <url>https://maven.aliyun.com/repository/public</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-    </repositories>
+      <!-- mybatis-plus -->
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>public</id>
-            <name>aliyun nexus</name>
-            <url>https://maven.aliyun.com/repository/public</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
+      <!-- 工具类核心包 -->
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-bom</artifactId>
+        <version>${hutool.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <target>${maven.compiler.target}</target>
+          <source>${maven.compiler.source}</source>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>public</id>
+      <name>aliyun nexus</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>public</id>
+      <name>aliyun nexus</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 </project>
