@@ -8,8 +8,10 @@
     <artifactId>ynld-framework</artifactId>
     <version>${revision}</version>
   </parent>
+  <packaging>jar</packaging>
 
   <artifactId>ynld-spring-boot-starter-banner</artifactId>
+  <description>用于在控制台输出一些信息</description>
 
   <dependencies>
     <dependency>

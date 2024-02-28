@@ -10,7 +10,6 @@
   </parent>
 
   <artifactId>ynld-server</artifactId>
-
   <description>系统框架启动模块</description>
 
   <dependencies>

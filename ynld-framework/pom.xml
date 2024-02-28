@@ -9,11 +9,13 @@
     <version>${revision}</version>
   </parent>
   <packaging>pom</packaging>
+
   <artifactId>ynld-framework</artifactId>
-  <description>系统框架核心</description>
+  <description>系统框架核心模块</description>
 
   <modules>
     <module>ynld-common</module>
     <module>ynld-spring-boot-starter-banner</module>
+    <module>ynld-spring-boot-starter-web</module>
   </modules>
 </project>
