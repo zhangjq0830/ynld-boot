@@ -11,12 +11,11 @@
   <modules>
     <module>ynld-server</module>
     <module>ynld-framework</module>
-    <module>ynld-system</module>
   </modules>
 
   <properties>
     <revision>1.0.0</revision>
-    <spring-boot.version>3.2.2</spring-boot.version>
+    <spring-boot.version>3.2.3</spring-boot.version>
     <druid.version>1.2.21</druid.version>
     <mybatis-plus.version>3.5.5</mybatis-plus.version>
     <hutool.version>5.8.26</hutool.version>
