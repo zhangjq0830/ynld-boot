@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class YnldBannerAutoConfiguration {
-
   @Bean
   public BannerApplicationRunner bannerApplicationRunner() {
     return new BannerApplicationRunner();

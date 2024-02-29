@@ -59,6 +59,20 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
+      <!--  *****************************************  -->
+      <dependency>
+        <groupId>com.ynld</groupId>
+        <artifactId>ynld-common</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.ynld</groupId>
+        <artifactId>ynld-spring-boot-starter-web</artifactId>
+        <version>${revision}</version>
+      </dependency>
+      <!--  *****************************************  -->
     </dependencies>
   </dependencyManagement>
 

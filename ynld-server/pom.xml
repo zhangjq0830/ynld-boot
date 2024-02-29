@@ -15,8 +15,7 @@
   <dependencies>
     <dependency>
       <groupId>com.ynld</groupId>
-      <artifactId>ynld-spring-boot-starter-banner</artifactId>
-      <version>${revision}</version>
+      <artifactId>ynld-spring-boot-starter-web</artifactId>
     </dependency>
   </dependencies>
 </project>
