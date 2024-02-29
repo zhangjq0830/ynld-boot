@@ -1,6 +1,3 @@
-ynld:
-  version: 1.0.0
-
 # 开发环境配置
 server:
   # 服务器的HTTP端口，默认为18080
@@ -18,3 +15,9 @@ server:
       max: 1000
       # Tomcat启动初始化的线程数，默认值10
       min-spare: 100
+# Spring配置
+spring:
+  application:
+    name: ynld-server
+  profiles:
+    active: dev
