@@ -1,6 +1,7 @@
 package com.ynld.framework.common.core;
 
-import com.ynld.framework.common.exception.GlobalCodeConstants;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.ynld.framework.common.exception.GlobalErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CommonResult<T> implements Serializable {
 
   @Serial
@@ -36,35 +38,32 @@ public class CommonResult<T> implements Serializable {
    */
   private T data;
 
-  public static <T> CommonResult<T> success() {
-    return CommonResult.success("操作成功");
-  }
 
-  public static <T> CommonResult<T> success(String msg) {
-    return CommonResult.success(msg, null);
+  public static <T> CommonResult<T> success() {
+    return restResult(GlobalErrorCode.SUCCESS.getCode(), "操作成功", null);
   }
 
   public static <T> CommonResult<T> success(T data) {
-    return CommonResult.success("操作成功", data);
+    return restResult(GlobalErrorCode.SUCCESS.getCode(), "操作成功", data);
   }
 
-  public static <T> CommonResult<T> success(String msg, T data) {
-    return new CommonResult<>(GlobalCodeConstants.SUCCESS.getCode(), msg, data);
+  public static <T> CommonResult<T> success(String msg) {
+    return restResult(GlobalErrorCode.SUCCESS.getCode(), msg, null);
   }
 
   public static <T> CommonResult<T> error() {
-    return CommonResult.error("操作失败");
-  }
-
-  public static <T> CommonResult<T> error(String msg) {
-    return CommonResult.error(msg, null);
+    return restResult(GlobalErrorCode.SERVER_ERROR.getCode(), "操作失败", null);
   }
 
   public static <T> CommonResult<T> error(T data) {
-    return CommonResult.error("操作失败", data);
+    return restResult(GlobalErrorCode.SERVER_ERROR.getCode(), "操作失败", data);
   }
 
-  public static <T> CommonResult<T> error(String msg, T data) {
-    return new CommonResult<>(GlobalCodeConstants.SERVER_ERROR.getCode(), msg, data);
+  public static <T> CommonResult<T> error(String msg) {
+    return restResult(GlobalErrorCode.SERVER_ERROR.getCode(), msg, null);
+  }
+
+  public static <T> CommonResult<T> restResult(Integer code, String msg, T data) {
+    return new CommonResult<>(code, msg, data);
   }
 }

@@ -10,7 +10,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public enum GlobalCodeConstants {
+public enum GlobalErrorCode {
   SUCCESS(200, "成功"),
 
   //   ========== 客户端错误段 ==========
@@ -30,6 +30,9 @@ public enum GlobalCodeConstants {
   SERVER_ERROR(500, "服务器内部错误"),
   BAD_GATEWAY(502, "网关错误"),
   SERVICE_UNAVAILABLE(503, "服务不可用");
+
+  //   ========== 业务错误段 ==========
+
 
   private final Integer code;
   private final String message;
