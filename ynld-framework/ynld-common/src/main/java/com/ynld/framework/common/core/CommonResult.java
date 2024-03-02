@@ -40,11 +40,11 @@ public class CommonResult<T> implements Serializable {
 
 
   public static <T> CommonResult<T> success() {
-    return restResult(GlobalErrorCode.SUCCESS.getCode(), "操作成功", null);
+    return restResult(GlobalErrorCode.SUCCESS.getCode(), GlobalErrorCode.SUCCESS.getMessage(), null);
   }
 
   public static <T> CommonResult<T> success(T data) {
-    return restResult(GlobalErrorCode.SUCCESS.getCode(), "操作成功", data);
+    return restResult(GlobalErrorCode.SUCCESS.getCode(), GlobalErrorCode.SUCCESS.getMessage(), data);
   }
 
   public static <T> CommonResult<T> success(String msg) {
@@ -52,11 +52,11 @@ public class CommonResult<T> implements Serializable {
   }
 
   public static <T> CommonResult<T> error() {
-    return restResult(GlobalErrorCode.SERVER_ERROR.getCode(), "操作失败", null);
+    return restResult(GlobalErrorCode.SERVER_ERROR.getCode(), GlobalErrorCode.SERVER_ERROR.getMessage(), null);
   }
 
   public static <T> CommonResult<T> error(T data) {
-    return restResult(GlobalErrorCode.SERVER_ERROR.getCode(), "操作失败", data);
+    return restResult(GlobalErrorCode.SERVER_ERROR.getCode(), GlobalErrorCode.SERVER_ERROR.getMessage(), data);
   }
 
   public static <T> CommonResult<T> error(String msg) {

@@ -14,6 +14,6 @@ public class DemoController {
 
   @GetMapping("/demo")
   public CommonResult<String> demo() {
-    return CommonResult.error();
+    return CommonResult.success();
   }
 }

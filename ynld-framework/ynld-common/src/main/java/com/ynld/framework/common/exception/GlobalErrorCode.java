@@ -11,7 +11,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum GlobalErrorCode {
-  SUCCESS(200, "成功"),
+  SUCCESS(200, "操作成功"),
 
   //   ========== 客户端错误段 ==========
   BAD_REQUEST(400, "请求参数不正确"),
@@ -20,19 +20,16 @@ public enum GlobalErrorCode {
   NOT_FOUND(404, "请求未找到"),
   METHOD_NOT_ALLOWED(405, "请求方法不正确"),
   REQUEST_TIMEOUT(408, "请求超时"),
-  CONFLICT(409, "资源冲突"),
-  REQUEST_ENTITY_TOO_LARGE(413, "请求实体过大"),
   UNSUPPORTED_MEDIA_TYPE(415, "不支持的媒体类型"),
-  UNPROCESSABLE_ENTITY(422, "请求实体无法处理"),
-  TOO_MANY_REQUESTS(429, "请求过多"),
+  TOO_MANY_REQUESTS(429, "请求过于频繁，请稍后重试"),
 
   //   ========== 服务端错误段 ==========
   SERVER_ERROR(500, "服务器内部错误"),
-  BAD_GATEWAY(502, "网关错误"),
-  SERVICE_UNAVAILABLE(503, "服务不可用");
+  BAD_GATEWAY(502, "错误的配置项"),
+  SERVICE_UNAVAILABLE(503, "服务不可用"),
 
   //   ========== 业务错误段 ==========
-
+  UNKNOWN_ERROR(999, "未知错误");
 
   private final Integer code;
   private final String message;

@@ -5,7 +5,7 @@ import cn.hutool.core.util.StrUtil;
 /**
  * @author zhang_jq
  * @date 2024/3/1
- * @apiNote description
+ * @apiNote 字符串工具类
  */
 public class StringUtils {
 
