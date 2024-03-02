@@ -25,8 +25,7 @@ public enum GlobalErrorCode {
 
   //   ========== 服务端错误段 ==========
   SERVER_ERROR(500, "服务器内部错误"),
-  BAD_GATEWAY(502, "错误的配置项"),
-  SERVICE_UNAVAILABLE(503, "服务不可用"),
+  BAD_CONFIGURATION(502, "错误的配置项"),
 
   //   ========== 业务错误段 ==========
   UNKNOWN_ERROR(999, "未知错误");

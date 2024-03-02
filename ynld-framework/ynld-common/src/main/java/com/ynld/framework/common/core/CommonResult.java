@@ -52,15 +52,15 @@ public class CommonResult<T> implements Serializable {
   }
 
   public static <T> CommonResult<T> error() {
-    return restResult(GlobalErrorCode.SERVER_ERROR.getCode(), GlobalErrorCode.SERVER_ERROR.getMessage(), null);
+    return error(GlobalErrorCode.SERVER_ERROR.getCode(), GlobalErrorCode.SERVER_ERROR.getMessage());
   }
 
-  public static <T> CommonResult<T> error(T data) {
-    return restResult(GlobalErrorCode.SERVER_ERROR.getCode(), GlobalErrorCode.SERVER_ERROR.getMessage(), data);
+  public static <T> CommonResult<T> error(GlobalErrorCode errorCode) {
+    return error(errorCode.getCode(), errorCode.getMessage());
   }
 
-  public static <T> CommonResult<T> error(String msg) {
-    return restResult(GlobalErrorCode.SERVER_ERROR.getCode(), msg, null);
+  public static <T> CommonResult<T> error(Integer code, String msg) {
+    return restResult(code, msg, null);
   }
 
   public static <T> CommonResult<T> restResult(Integer code, String msg, T data) {
