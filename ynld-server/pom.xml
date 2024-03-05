@@ -15,7 +15,7 @@
   <dependencies>
     <dependency>
       <groupId>com.ynld</groupId>
-      <artifactId>ynld-spring-boot-starter-web</artifactId>
+      <artifactId>ynld-system-biz</artifactId>
     </dependency>
   </dependencies>
 </project>

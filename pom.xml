@@ -11,6 +11,7 @@
   <modules>
     <module>ynld-server</module>
     <module>ynld-framework</module>
+    <module>ynld-system</module>
   </modules>
 
   <properties>
@@ -70,6 +71,12 @@
       <dependency>
         <groupId>com.ynld</groupId>
         <artifactId>ynld-spring-boot-starter-web</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.ynld</groupId>
+        <artifactId>ynld-system-biz</artifactId>
         <version>${revision}</version>
       </dependency>
       <!--  *****************************************  -->

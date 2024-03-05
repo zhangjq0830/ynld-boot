@@ -8,14 +8,11 @@
     <artifactId>ynld-boot</artifactId>
     <version>${revision}</version>
   </parent>
+
+  <artifactId>ynld-system</artifactId>
   <packaging>pom</packaging>
-
-  <artifactId>ynld-framework</artifactId>
-  <description>系统框架核心模块</description>
-
   <modules>
-    <module>ynld-common</module>
-    <module>ynld-spring-boot-starter-web</module>
-    <module>ynld-spring-boot-starter-mybatis</module>
+    <module>ynld-system-biz</module>
   </modules>
+
 </project>

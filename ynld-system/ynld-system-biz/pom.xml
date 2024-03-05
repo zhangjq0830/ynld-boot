@@ -5,17 +5,18 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.ynld</groupId>
-    <artifactId>ynld-boot</artifactId>
+    <artifactId>ynld-system</artifactId>
     <version>${revision}</version>
   </parent>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
-  <artifactId>ynld-framework</artifactId>
-  <description>系统框架核心模块</description>
+  <artifactId>ynld-system-biz</artifactId>
+  <description>后台系统管理模块</description>
 
-  <modules>
-    <module>ynld-common</module>
-    <module>ynld-spring-boot-starter-web</module>
-    <module>ynld-spring-boot-starter-mybatis</module>
-  </modules>
+  <dependencies>
+    <dependency>
+      <groupId>com.ynld</groupId>
+      <artifactId>ynld-spring-boot-starter-web</artifactId>
+    </dependency>
+  </dependencies>
 </project>
